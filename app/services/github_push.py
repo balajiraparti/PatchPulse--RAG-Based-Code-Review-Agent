@@ -2,16 +2,13 @@ import httpx
 from dotenv import load_dotenv
 load_dotenv()
 import os
-def push_comment(url:str,messsage:str):
+def push_comment(url:str,messsage:str,TOKEN:str):
     url_split=url.split('/')
     OWNER=url_split[3]
     REPO=url_split[4]
     PR_NUMBER=url_split[6]
     try:
-        TOKEN = os.getenv("GITHUB_TOKEN")
-        # OWNER = "balajiraparti"
-        # REPO = "balajiraparti"
-        # PR_NUMBER = 3
+        # TOKEN = os.getenv("GITHUB_TOKEN")
 
         url = f"https://api.github.com/repos/{OWNER}/{REPO}/issues/{PR_NUMBER}/comments"
 
