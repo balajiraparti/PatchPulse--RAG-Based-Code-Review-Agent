@@ -3,6 +3,7 @@ from dotenv import load_dotenv
 from langchain_core.prompts import ChatPromptTemplate
 from langchain_openai import ChatOpenAI
 load_dotenv()
+import streamlit as st
 from pydantic import BaseModel
 class CommentSchema(BaseModel):
      comment:str
@@ -11,6 +12,7 @@ def generate_comment(review:str,code:str):
     
     llm = ChatOpenAI(
         model="gpt-5-nano",
+        api_key=st.secrets['API_KEY']
     )
     messages =ChatPromptTemplate.from_messages( [
     (

@@ -4,7 +4,7 @@ from langchain_openai import OpenAIEmbeddings
 from langchain_qdrant import QdrantVectorStore
 from openai import OpenAI
 from langchain_openai import ChatOpenAI
-
+import streamlit as st
 from langchain_huggingface.embeddings import HuggingFaceEmbeddings
 load_dotenv()
 
@@ -37,6 +37,7 @@ def generate_review():
     print(context)
     model = ChatOpenAI(
         model="gpt-5-nano",
+        api_key=st.secrets['API_KEY']
     )
     messages = [
         ("system", system_prompt),
