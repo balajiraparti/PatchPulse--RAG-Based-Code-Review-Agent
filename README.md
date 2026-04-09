@@ -46,3 +46,8 @@ PatchPulse is an intelligent code review agent that automates pull request (PR) 
 git clone https://github.com/your-username/patchpulse.git
 cd patchpulse
 pip install -r requirements.txt
+```
+## 📦 How to run
+```bash
+streamlit run app/main.py
+```
